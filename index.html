@@ -6,116 +6,135 @@
 <title>For My Betuuu ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    height:100vh;
-    overflow:hidden;
-    background: linear-gradient(-45deg,#ff4e9b,#7f5af0,#00c6ff,#ff6ec7);
-    background-size:400% 400%;
-    animation: gradientBG 10s ease infinite;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
+height:100vh;
+overflow:hidden;
+background:linear-gradient(270deg,#ff0080,#7928ca,#00c6ff);
+background-size:600% 600%;
+animation:bgMove 12s infinite;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
 }
 
-@keyframes gradientBG{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 .container{
-    width:95%;
-    max-width:450px;
-    height:85vh;
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    padding:20px;
-    display:flex;
-    flex-direction:column;
-    box-shadow:0 0 30px rgba(0,0,0,0.3);
+width:95%;
+max-width:420px;
+height:90vh;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+border-radius:25px;
+box-shadow:0 0 30px rgba(0,0,0,0.4);
+padding:20px;
+display:flex;
+flex-direction:column;
+position:relative;
+overflow:hidden;
 }
 
 .header{
-    text-align:center;
-    font-size:22px;
-    font-weight:700;
+text-align:center;
+font-size:24px;
+font-weight:700;
+text-shadow:0 0 10px pink;
 }
 
 .countdown{
-    text-align:center;
-    margin:10px 0;
-    font-size:16px;
+text-align:center;
+margin:10px 0;
+font-size:15px;
 }
 
 .chat-box{
-    flex:1;
-    overflow-y:auto;
-    padding:10px;
+flex:1;
+overflow-y:auto;
+padding:10px;
 }
 
 .message{
-    margin:10px 0;
-    padding:10px 15px;
-    border-radius:15px;
-    max-width:75%;
-    animation:fadeIn 1s ease;
+margin:12px 0;
+padding:12px 18px;
+border-radius:20px;
+max-width:75%;
+animation:pop 0.6s ease;
+position:relative;
 }
 
 .hacker{
-    background:#ff4e9b;
-    align-self:flex-end;
+background:linear-gradient(45deg,#ff4e9b,#ff0080);
+align-self:flex-end;
+box-shadow:0 0 10px #ff4e9b;
 }
 
 .betuuu{
-    background:#00c6ff;
-    align-self:flex-start;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+align-self:flex-start;
+box-shadow:0 0 10px #00c6ff;
 }
 
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(10px);}
-    to{opacity:1;transform:translateY(0);}
+@keyframes pop{
+from{transform:scale(0.5);opacity:0;}
+to{transform:scale(1);opacity:1;}
 }
 
 .footer{
-    text-align:center;
-    font-size:12px;
-    opacity:0.8;
+text-align:center;
+font-size:12px;
+opacity:0.7;
 }
 
-/* Floating hearts */
+/* Floating Emojis */
 
-.heart{
-    position:absolute;
-    color:#fff;
-    animation:float 6s linear infinite;
+.float{
+position:absolute;
+animation:float 7s linear infinite;
 }
 
 @keyframes float{
-    0%{transform:translateY(100vh) scale(0.5);}
-    100%{transform:translateY(-10vh) scale(1.5);}
+0%{transform:translateY(100vh) scale(0.5);}
+100%{transform:translateY(-10vh) scale(1.3);}
 }
 
-/* Celebration Mode */
+/* Fireworks */
+
+.firework{
+position:absolute;
+font-size:30px;
+animation:burst 1.5s ease forwards;
+}
+
+@keyframes burst{
+0%{transform:scale(0);opacity:1;}
+100%{transform:scale(2);opacity:0;}
+}
+
+/* Glow mode */
 
 .celebrate{
-    animation:glow 1.5s infinite alternate;
+animation:glow 1s infinite alternate;
 }
 
 @keyframes glow{
-    from{text-shadow:0 0 10px #fff;}
-    to{text-shadow:0 0 30px #ff00ff;}
+from{text-shadow:0 0 10px #fff;}
+to{text-shadow:0 0 35px #ff00ff;}
 }
 
 </style>
@@ -124,10 +143,19 @@ body{
 <body>
 
 <div class="container">
-    <div class="header">💖 Hacker & Betuuu 💖</div>
-    <div class="countdown" id="countdown"></div>
-    <div class="chat-box" id="chatBox"></div>
-    <div class="footer">Made with ❤️ by Hacker</div>
+
+<div class="header">
+<i class="fa-solid fa-heart"></i> Hacker 💻 & Betuuu 💖
+</div>
+
+<div class="countdown" id="countdown"></div>
+
+<div class="chat-box" id="chatBox"></div>
+
+<div class="footer">
+Made with ❤️ by Hacker
+</div>
+
 </div>
 
 <script>
@@ -135,72 +163,94 @@ body{
 const chatBox = document.getElementById("chatBox");
 const countdown = document.getElementById("countdown");
 
-// IST Birthday Time
 const birthday = new Date("2026-02-15T00:00:00+05:30");
 
-const messages = [
+const messages=[
 "Hey Betuuu 💖 Your birthday is coming...",
+"Tum meri sabse pyaari feeling ho ❤️",
 "Bas thoda sa wait meri jaan 🥰",
-"15 February is going to be magical ✨",
-"Tumhari smile duniya ki sabse pyaari hai ❤️",
-"Hacker is preparing something special 💻💖",
-"Betuu, tum meri duniya ho 🌍❤️",
-"Countdown shuru ho chuka hai 🎂",
-"I love you more every single day 💞",
+"15 February magical hone wala hai ✨",
+"Hacker tumhare liye surprise bana raha hai 💻",
+"Betuuu tum meri duniya ho 🌍❤️",
+"Main tumhe har din zyada love karta hoon 💞",
+"Countdown chal raha hai meri princess 👑",
 "Wait till 12 AM 😘"
 ];
 
-function addMessage(text, sender){
-    const msg = document.createElement("div");
-    msg.classList.add("message", sender);
-    msg.innerHTML = text;
-    chatBox.appendChild(msg);
-    chatBox.scrollTop = chatBox.scrollHeight;
+function typingEffect(text, sender){
+let msg=document.createElement("div");
+msg.classList.add("message",sender);
+chatBox.appendChild(msg);
+
+let i=0;
+let interval=setInterval(()=>{
+msg.innerHTML=text.substring(0,i);
+i++;
+if(i>text.length) clearInterval(interval);
+chatBox.scrollTop=chatBox.scrollHeight;
+},40);
 }
 
 function randomMessage(){
-    let text = messages[Math.floor(Math.random()*messages.length)];
-    addMessage(text,"hacker");
+let text=messages[Math.floor(Math.random()*messages.length)];
+typingEffect(text,"hacker");
 }
 
-setInterval(randomMessage,4000);
+setInterval(randomMessage,5000);
 
-// Countdown
+/* Countdown */
 
 function updateCountdown(){
-    const now = new Date();
-    const diff = birthday - now;
+const now=new Date();
+const diff=birthday-now;
 
-    if(diff <= 0){
-        countdown.innerHTML = "🎉 Happy Birthday Betuuu ❤️🎂";
-        document.querySelector(".header").classList.add("celebrate");
-        addMessage("Happy Birthday My Betuuu ❤️🎂💖","hacker");
-        return;
-    }
+if(diff<=0){
+countdown.innerHTML="🎉 Happy Birthday Betuuu ❤️🎂";
+document.querySelector(".header").classList.add("celebrate");
+typingEffect("Happy Birthday My Betuuu ❤️🎂🥰","hacker");
+fireworks();
+return;
+}
 
-    const days = Math.floor(diff/(1000*60*60*24));
-    const hours = Math.floor((diff/(1000*60*60))%24);
-    const minutes = Math.floor((diff/(1000*60))%60);
-    const seconds = Math.floor((diff/1000)%60);
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor((diff/(1000*60*60))%24);
+let m=Math.floor((diff/(1000*60))%60);
+let s=Math.floor((diff/1000)%60);
 
-    countdown.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left for your birthday 🎂`;
+countdown.innerHTML=`⏳ ${d}d ${h}h ${m}m ${s}s left 🎂`;
 }
 
 setInterval(updateCountdown,1000);
 
-// Floating hearts
+/* Floating Emojis */
 
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = Math.random()*20 + 10 + "px";
-    heart.innerHTML = "❤️";
-    document.body.appendChild(heart);
-    setTimeout(()=>{heart.remove();},6000);
+const emojis=["❤️","💖","✨","🥰","💫","🎂","🌸"];
+
+function floatEmoji(){
+let el=document.createElement("div");
+el.classList.add("float");
+el.style.left=Math.random()*100+"vw";
+el.style.fontSize=Math.random()*25+15+"px";
+el.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+document.body.appendChild(el);
+setTimeout(()=>{el.remove()},7000);
 }
 
-setInterval(createHeart,500);
+setInterval(floatEmoji,600);
+
+/* Fireworks */
+
+function fireworks(){
+setInterval(()=>{
+let fw=document.createElement("div");
+fw.classList.add("firework");
+fw.style.left=Math.random()*100+"vw";
+fw.style.top=Math.random()*100+"vh";
+fw.innerHTML="🎆";
+document.body.appendChild(fw);
+setTimeout(()=>fw.remove(),1500);
+},400);
+}
 
 </script>
 
